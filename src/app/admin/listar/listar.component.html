@@ -1,0 +1,54 @@
+<div class="tituloListas">
+  <h1 class="titulo-principal">Lista de Passagens</h1>
+  <button class="btnIncluir" routerLink="/admin/passagens/incluir" color="primary"><mat-icon class="material-icons-outlined">
+    add
+  </mat-icon></button>
+</div>
+<table class="tabela-passagens" mat-table [dataSource]="produtos" >
+
+<ng-container matColumnDef="id">
+  <th class="container-titulo" mat-header-cell *matHeaderCellDef> ID </th>
+  <td class="container-texto" mat-cell *matCellDef="let produto"> {{produto.id}} </td>
+</ng-container>
+
+<ng-container matColumnDef="origem">
+  <th class="container-titulo" mat-header-cell *matHeaderCellDef> Origem </th>
+  <td class="container-texto" mat-cell *matCellDef="let produto"> {{produto.origem}} </td>
+</ng-container>
+
+<ng-container matColumnDef="destino">
+  <th class="container-titulo" mat-header-cell *matHeaderCellDef> Destino </th>
+  <td class="container-texto" mat-cell *matCellDef="let produto"> {{produto.destino}} </td>
+</ng-container>
+
+<ng-container matColumnDef="data">
+  <th class="container-titulo" mat-header-cell *matHeaderCellDef> Data </th>
+  <td class="container-texto" mat-cell *matCellDef="let produto"> {{produto.data}} </td>
+</ng-container>
+
+<ng-container matColumnDef="preco">
+  <th class="container-titulo" mat-header-cell *matHeaderCellDef> Preço </th>
+  <td class="container-texto" mat-cell *matCellDef="let produto"> {{produto.preco}} </td>
+</ng-container>
+
+<ng-container matColumnDef="taxas">
+  <th class="container-titulo" mat-header-cell *matHeaderCellDef> Taxas </th>
+  <td class="container-texto" mat-cell *matCellDef="let produto"> {{produto.taxas}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="acoes">
+  <th class="container-titulo" mat-header-cell *matHeaderCellDef style="text-align: center; padding-right: 35px"> Ações </th>
+  <td class="ultima-coluna" mat-cell *matCellDef="let produto">
+    <a class="btnEditar" routerLink="/admin/passagens/atualizar/{{ produto.id }}"><mat-icon class="material-icons-outlined">
+      edit
+    </mat-icon></a>
+    <a class="btnExcluir" routerLink="/admin/passagens/excluir/{{ produto.id }}"><mat-icon class="material-icons-outlined">
+      clear
+    </mat-icon></a>
+  </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="colunas"></tr>
+<tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+</table>

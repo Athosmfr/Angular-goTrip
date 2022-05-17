@@ -1,0 +1,28 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "origem": " São Paulo",
+      "destino": " Rio de Janeiro",
+      "data": "2022-07-06",
+      "preco": 780,
+      "taxas": 220
+    },
+    {
+      "id": 2,
+      "origem": " Rio de Janeiro",
+      "destino": " Curitiba",
+      "data": "2022-06-10",
+      "preco": 650,
+      "taxas": 200
+    },
+    {
+      "id": 3,
+      "origem": "Curitiba",
+      "destino": "São Paulo",
+      "data": "2022-06-26",
+      "preco": 750,
+      "taxas": 150
+    }
+  ]
+}
